@@ -1,0 +1,11 @@
+        Dim STR, FirstPart, SecondPart, FinalName As String
+        FinalName = ""
+        Console.Write("Enter your string: ")
+        STR = Console.ReadLine
+        For i = 1 To Len(STR)
+            FirstPart = Left(STR, InStr(STR, "not") - 1)
+            SecondPart = Mid(STR, InStr(STR, "bad") + 3, Len(STR))
+            FinalName = FirstPart & "good" & SecondPart
+        Next
+        Console.WriteLine(FinalName)
+        Console.ReadKey()
