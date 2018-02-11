@@ -1,11 +1,51 @@
-        Dim S1, FirstChar, Check, Pick As String
+        Module Module1
+
+    Sub Main()
+        Dim S1, Front1, FrontOdd, Back1, S2, Front2, FrontOdd2, Back2, FinalStr, Length, FinalStr2, Length2 As String
+        FrontOdd = ""
+        FrontOdd2 = ""
+        Front1 = ""
+        Front2 = ""
+        Back2 = ""
+        Length = ""
         Console.Write("Enter your string: ")
         S1 = Console.ReadLine
-        FirstChar = Left(S1, 1)
-        Check = FirstChar
-        For i = 2 To Len(S1)
-            Pick = Mid(S1, i, 1)
-            If Pick = FirstChar Then Check = Check & "*"
-            If Pick <> FirstChar Then Check = Check & Pick
-        Next
-        Console.WriteLine(Check)
+        Console.Write("Enter your string: ")
+        S2 = Console.ReadLine
+            If Len(S1) Mod 2 = 0 And Len(S2) Mod 2 = 0 Then
+                Front1 = Left(S1, Len(S1) / 2)
+                Front2 = Left(S2, Len(S2) / 2)
+                Back1 = Mid(S1, Len(S1) / 2 + 1, Len(S1))
+                Back2 = Mid(S2, Len(S1) / 2 + 1, Len(S2))
+                Console.WriteLine(Front1 & Front1 & Back1 & Back2)
+            End If
+            If Len(S1) Mod 2 <> 0 And Len(S2) Mod 2 <> 0 Then
+                Length = Len(S1) - 1
+                Length2 = Len(S2) - 1
+                FrontOdd = Left(S1, Length / 2)
+                FrontOdd = FrontOdd & Mid(S1, Length / 2 + 1, 1)
+                Back1 = Mid(S1, Length / 2 + 2, Len(S1))
+                FrontOdd2 = Left(S2, Length / 2)
+                FrontOdd2 = FrontOdd2 & Mid(S2, Length / 2 + 1, Len(S2))
+                Back2 = Mid(S2, Length / 2 + 2, Len(S2))
+                Console.WriteLine(FrontOdd & FrontOdd2 & Back1 & Back2)
+        End If
+        If Len(S1) Mod 2 <> 0 And Len(S2) Mod 2 = 0 Then
+            Length = Len(S1) - 1
+            FrontOdd = Left(S1, Length / 2)
+            FrontOdd = FrontOdd & Mid(S1, Length / 2 + 1, 1)
+            Back1 = Mid(S1, Length / 2 + 2, Len(S1))
+            Front2 = Left(S2, Len(S2) / 2)
+            Back2 = Mid(S2, Len(S2) / 2 + 1, Len(S2))
+            Console.WriteLine(FrontOdd & Front2 & Back1 & Back2)
+        End If
+        If Len(S1) Mod 2 = 0 And Len(S2) Mod 2 <> 0 Then
+            Length2 = Len(S2) - 1
+            Front1 = Left(S1, Len(S1) / 2)
+            Back1 = Mid(S1, Len(S1) / 2 + 1, Len(S1))
+            FrontOdd2 = Left(S2, Length / 2)
+            FrontOdd2 = FrontOdd2 & Mid(S2, Length / 2 + 1, Len(S2))
+            Back2 = Mid(S2, Length / 2 + 2, Len(S2))
+            Console.WriteLine(Front1 & FrontOdd2 & Back1 & Back2)
+        End If
+            Console.Readkey()
