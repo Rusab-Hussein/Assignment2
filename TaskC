@@ -1,0 +1,12 @@
+       Dim S1, FirstChar, Check, Pick As String
+        Console.Write("Enter your string: ")
+        S1 = Console.ReadLine
+        FirstChar = Left(S1, 1)
+        Check = FirstChar
+        For i = 2 To Len(S1)
+            Pick = Mid(S1, i, 1)
+            If Pick = FirstChar Then Check = Check & "*"
+            If Pick <> FirstChar Then Check = Check & Pick
+        Next
+        Console.WriteLine(Check)
+        Console.Readkey()
