@@ -1,0 +1,17 @@
+        Dim S1, S2, FirstName, SecondName, FirstString, Pick1, Pick2, SecondString As String
+        Console.Write("Enter your string: ")
+        S1 = Console.ReadLine
+        Console.Write("Enter your string: ")
+        S2 = Console.ReadLine
+        FirstName = Left(S1, 2)
+        SecondName = Left(S2, 2)
+        For i = 3 To Len(S1)
+            Pick1 = Mid(S1, i, 1)
+            FirstString = SecondName & Pick1
+        Next
+        For i = 3 To Len(S2)
+            Pick2 = Mid(S2, i, 1)
+            SecondString = FirstName & Pick2
+        Next
+        Console.WriteLine(FirstString & "" & SecondString)
+        Console.ReadKey()
