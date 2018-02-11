@@ -1,0 +1,9 @@
+        Dim S1, First, Second, FinalName As String
+        Console.Write("Enter your string: ")
+        S1 = Console.ReadLine
+        If Len(S1) < 2 Then Console.Write("string is empty")
+        First = Mid(S1, 1, 2)
+        Second = Mid(S1, Len(S1) - 1, 2)
+        FinalName = First & Second
+        Console.Write(FinalName)
+        Console.Readkey()
